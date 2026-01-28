@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GPU Value Table - Shux</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <h1>Ranking GPUs · Value / Price</h1>
+      <p>
+        Tabla dinámica con rendimiento TechPowerUp, precios en USD/ARS y conversión por dólar MEP.
+        Se actualiza cada 12 horas desde la API configurada.
+      </p>
+    </div>
+    <div class="hero-meta">
+      <div>
+        <span class="label">Última actualización</span>
+        <strong id="last-updated">--</strong>
+      </div>
+      <div>
+        <span class="label">Próxima actualización</span>
+        <strong id="next-update">--</strong>
+      </div>
+    </div>
+  </header>
+
+  <section class="filters">
+    <div class="filter">
+      <label for="search">Buscar modelo</label>
+      <input id="search" type="search" placeholder="RTX 4070, RX 7800..." />
+    </div>
+    <div class="filter">
+      <label for="manufacturer">Fabricante</label>
+      <select id="manufacturer">
+        <option value="">Todos</option>
+        <option value="NVIDIA">NVIDIA</option>
+        <option value="AMD">AMD</option>
+        <option value="Intel">Intel</option>
+      </select>
+    </div>
+    <div class="filter">
+      <label for="perf-min">Rendimiento mínimo</label>
+      <input id="perf-min" type="number" min="0" placeholder="0" />
+    </div>
+    <div class="filter">
+      <label for="price-max">Precio USD máx.</label>
+      <input id="price-max" type="number" min="0" placeholder="1200" />
+    </div>
+    <div class="filter">
+      <label for="sort">Ordenar por</label>
+      <select id="sort">
+        <option value="value_usd_current">Value USD actual</option>
+        <option value="price_usd_final">Precio USD final</option>
+        <option value="price_ars_min_whitelist">Precio ARS min</option>
+        <option value="relative_performance_tpu">Rendimiento</option>
+      </select>
+    </div>
+  </section>
+
+  <section class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Imagen</th>
+          <th>Fabricante</th>
+          <th>GPU</th>
+          <th>Rendimiento</th>
+          <th>MSRP USD</th>
+          <th>Precio USD (PCPP)</th>
+          <th>Precio USD (Amazon)</th>
+          <th>Precio USD final</th>
+          <th>Precio ARS min</th>
+          <th>ARS → USD (MEP)</th>
+          <th>Value USD actual</th>
+          <th>Value MSRP</th>
+          <th>Value ARS</th>
+          <th>Fuentes</th>
+        </tr>
+      </thead>
+      <tbody id="gpu-table"></tbody>
+    </table>
+  </section>
+
+  <footer>
+    <p>
+      Datos de ejemplo. Conectar a APIs reales para producción (PCPartPicker, Amazon PA-API, HardGamers, dólar MEP).
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

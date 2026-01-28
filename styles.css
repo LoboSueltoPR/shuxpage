@@ -1,0 +1,187 @@
+:root {
+  color-scheme: dark;
+  --bg: #0f1115;
+  --panel: #171a21;
+  --accent: #f3c623;
+  --accent-2: #00c2c7;
+  --text: #f8f8f8;
+  --muted: #9aa3b2;
+  --table-head: #1f232c;
+  --nvidia: #2ecc71;
+  --amd: #ff8c00;
+  --intel: #3498db;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 32px;
+  line-height: 1.4;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 560px;
+}
+
+.hero-meta {
+  display: grid;
+  gap: 12px;
+  background: var(--panel);
+  padding: 16px 20px;
+  border-radius: 12px;
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.filter {
+  background: var(--panel);
+  padding: 12px;
+  border-radius: 10px;
+  display: grid;
+  gap: 6px;
+}
+
+.filter label {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.filter input,
+.filter select {
+  background: #0c0e13;
+  border: 1px solid #2b2f39;
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.table-wrapper {
+  background: var(--panel);
+  border-radius: 14px;
+  overflow: auto;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1200px;
+}
+
+thead {
+  background: var(--table-head);
+}
+
+th,
+ td {
+  padding: 12px 10px;
+  text-align: center;
+  border-bottom: 1px solid #222733;
+  font-size: 0.85rem;
+}
+
+th {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+td img {
+  width: 70px;
+  border-radius: 8px;
+}
+
+.badge {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #111;
+  display: inline-block;
+}
+
+.badge.nvidia {
+  background: var(--nvidia);
+}
+
+.badge.amd {
+  background: var(--amd);
+}
+
+.badge.intel {
+  background: var(--intel);
+}
+
+.value-chip {
+  background: var(--accent-2);
+  color: #011114;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.stale {
+  color: #f39c12;
+  font-weight: 600;
+}
+
+.sources a {
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sources a + a {
+  margin-left: 8px;
+}
+
+footer {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+  body {
+    padding: 20px;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

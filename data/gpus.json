@@ -1,0 +1,81 @@
+{
+  "mep": {
+    "rate": 1065.5,
+    "source": "https://api.bcra.gob.ar/estadisticas/v2/dolar_mep",
+    "timestamp": "2024-05-10T12:00:00Z"
+  },
+  "gpus": [
+    {
+      "gpu_id": "rtx-4070-super",
+      "manufacturer": "NVIDIA",
+      "model_name": "RTX 4070 SUPER",
+      "image_url": "https://images.nvidia.com/aem-dam/Solutions/geforce/ada/rtx-4070-super/gallery/geforce-rtx-4070-super-gallery-1-1200x675.jpg",
+      "relative_performance_tpu": 115,
+      "msrp_usd": 599,
+      "price_usd_pcpartpicker": {
+        "price": 619,
+        "source_url": "https://pcpartpicker.com/product/example",
+        "timestamp": "2024-05-10T11:00:00Z"
+      },
+      "price_usd_amazon": {
+        "price": 639,
+        "source_url": "https://amazon.com/dp/example",
+        "timestamp": "2024-05-10T11:10:00Z"
+      },
+      "price_ars_min_whitelist": {
+        "price": 790000,
+        "store": "Venex",
+        "source_url": "https://www.hardgamers.com.ar/product/example",
+        "timestamp": "2024-05-10T11:20:00Z"
+      }
+    },
+    {
+      "gpu_id": "rx-7800-xt",
+      "manufacturer": "AMD",
+      "model_name": "RX 7800 XT",
+      "image_url": "https://assets.amd.com/content/dam/amd/en/images/products/graphics-cards/2606953-amd-radeon-rx-7800-xt.png",
+      "relative_performance_tpu": 108,
+      "msrp_usd": 499,
+      "price_usd_pcpartpicker": {
+        "price": 479,
+        "source_url": "https://pcpartpicker.com/product/example2",
+        "timestamp": "2024-05-10T11:05:00Z"
+      },
+      "price_usd_amazon": {
+        "price": 515,
+        "source_url": "https://amazon.com/dp/example2",
+        "timestamp": "2024-05-10T11:15:00Z"
+      },
+      "price_ars_min_whitelist": {
+        "price": 620000,
+        "store": "Maximus",
+        "source_url": "https://www.hardgamers.com.ar/product/example2",
+        "timestamp": "2024-05-10T11:25:00Z"
+      }
+    },
+    {
+      "gpu_id": "arc-a770",
+      "manufacturer": "Intel",
+      "model_name": "ARC A770 16GB",
+      "image_url": "https://www.intel.com/content/dam/www/central-libraries/us/en/images/2022-08/arc-a770-limited-edition.png.rendition.intel.web.480.270.png",
+      "relative_performance_tpu": 70,
+      "msrp_usd": 329,
+      "price_usd_pcpartpicker": {
+        "price": 309,
+        "source_url": "https://pcpartpicker.com/product/example3",
+        "timestamp": "2024-05-10T11:08:00Z"
+      },
+      "price_usd_amazon": {
+        "price": 339,
+        "source_url": "https://amazon.com/dp/example3",
+        "timestamp": "2024-05-10T11:12:00Z"
+      },
+      "price_ars_min_whitelist": {
+        "price": 410000,
+        "store": "Gezatek",
+        "source_url": "https://www.hardgamers.com.ar/product/example3",
+        "timestamp": "2024-05-10T11:24:00Z"
+      }
+    }
+  ]
+}
