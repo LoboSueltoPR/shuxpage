@@ -9,6 +9,11 @@ const priceMaxInput = document.getElementById("price-max");
 const sortSelect = document.getElementById("sort");
 
 const REFRESH_INTERVAL = 12 * 60 * 60 * 1000;
+const API_OVERRIDE = new URLSearchParams(window.location.search).get("api");
+const API_ENDPOINTS = [
+  API_OVERRIDE,
+  "data/gpus.json",
+].filter(Boolean);
 let gpuCache = [];
 let mepRate = null;
 
@@ -122,9 +127,27 @@ const updateRefreshTimes = (latestTimestamp) => {
   NEXT_UPDATE.textContent = nextDate.toLocaleString("es-AR");
 };
 
+const fetchRankingData = async () => {
+  for (const endpoint of API_ENDPOINTS) {
+    try {
+      const response = await fetch(endpoint, { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error(`Request failed (${response.status})`);
+      }
+      const payload = await response.json();
+      if (!payload?.gpus || !Array.isArray(payload.gpus)) {
+        throw new Error("Unexpected API payload");
+      }
+      return payload;
+    } catch (error) {
+      console.warn("API fetch failed", endpoint, error);
+    }
+  }
+  throw new Error("No API endpoints available");
+};
+
 const loadData = async () => {
-  const response = await fetch("data/gpus.json");
-  const payload = await response.json();
+  const payload = await fetchRankingData();
   mepRate = payload.mep?.rate ?? null;
 
   gpuCache = payload.gpus.map(computeRow);
